@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登入登出頁面</title>
+  <style>
+    .success { color: green; }
+    .error { color: red; }
+    .warning { color: orange; }
+    .info { color: blue; }
+  </style>
+</head>
+<body>
+  <!-- 顯示django messages -->
+  {% if messages %}
+      {% for message in messages %}
+        <p class="{{message.tags}}">{{ message }}</p>
+      {% endfor %}
+  {% endif %}
+  
+    <form action="/login/" method="POST" name="form1">
+      {% csrf_token %}
+      {% if status %}
+        <div><a href="/logout/">登出系統</a></div>
+      {% else %}
+        <div>帳號：<input type="text" name="username" id="username"/></div>
+        <div>密碼：<input type="password" name="password" id="password"/></div> 
+        <div><input type="submit" name="button" id="button" value="登入" /></div>	 
+      {% endif %}
+    </form>
+</body>
+</html>

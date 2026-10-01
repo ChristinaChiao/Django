@@ -1,0 +1,15 @@
+# 忽略 Python 虛擬環境套件與執行檔
+Lib/
+Scripts/
+Include/
+pyvenv.cfg
+CACHEDIR.TAG
+
+# 忽略 Python 快取與編譯檔
+__pycache__/
+*.pyc
+*.pyo
+
+# 忽略 IDE 設定檔
+.vscode/
+.idea/

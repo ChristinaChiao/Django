@@ -1,0 +1,41 @@
+{% load static %} <!--載入static靜態檔案-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Page</title>
+    <style>
+      .image_center{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+      h1{
+        color: rgb(43, 16, 194);
+        text-align: center;
+        font-size: 30px;
+      }
+      h1 span{
+        color: rgb(0, 140, 255);
+      }
+      h2{
+        color: rgba(0, 155, 95, 0.589);
+        text-align: center;
+        font-size: 20px;
+      }
+    </style>
+</head>
+<body>
+  <div class="image_center">
+    <img src="{% static 'images/images.jfif' %}" width="500" alt="no picture"> <!--後端載入圖片寫法-->
+  </div>
+  <h1>Welcome <span>{{ username }}</span></h1>
+  <h2>現在時間：{{ now }}</h2>
+  <h2>現在時間：{{ now|date:"Y/m/d H:i:s" }}</h2>
+  <!--修改時間顯示格式-->
+
+
+</body>
+</html>

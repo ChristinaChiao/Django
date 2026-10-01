@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lotto1</title>
+</head>
+<body>
+  <h1>{{ username }}你好</h1>
+  <h1>產生的樂透號碼為：{{ num|join:", " }} </h1>
+  <!--join的意思是將元素用指定的分隔符","連接成字串-->
+  <h1>{{num.0}}
+      {{num.1}}
+      {{num.2}}
+      {{num.3}}
+      {{num.4}}
+      {{num.5}}</h1>
+
+      <h1>{% for data in num %}
+          {{ data }} 
+          {% if forloop.last == False %},
+          {% endif %}
+          {% endfor %}</h1>
+</body>
+</html>

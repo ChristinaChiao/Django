@@ -1,0 +1,46 @@
+<!DOCTYPE html> <!-- 按驚嘆號Tab鍵，就可以產生以下框架 -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* CSS */
+    .image_center{
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+    h1{
+      color: rgb(43, 16, 194);
+      text-align: center;
+      font-size: 50px;
+    }
+    h1 span{
+      color: rgb(0, 140, 255);
+    }
+    h2{
+      color: rgba(0, 155, 95, 0.589);
+      text-align: center;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="image_center"><img src="images/images.jfif" width="500"></div>
+  <div id=""
+  <h1>Welcome <span>Bill</span></h1>
+  <h2>現在時間：<span id="time"></span></h2>
+  <!-- Ctrl+/ 註解 -->
+  <script>
+    function updateTime() {
+      const now = new Date();
+      document.getElementById('time').textContent = now.toLocaleTimeString();
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+  
+</body>
+</html>

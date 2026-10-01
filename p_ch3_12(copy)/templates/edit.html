@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}<title>編輯學生資料</title>{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card card-elevated p-4">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="section-title mb-0"><i class="bi bi-pencil-square me-2"></i>編輯學生資料</h2>
+        <a href="{% url 'index' %}" class="btn btn-outline-primary btn-sm">
+          <i class="bi bi-arrow-left"></i> 回首頁
+        </a>
+      </div>
+
+      <form action="{% url 'edit' obj_data.cid %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="cname" class="form-label">姓名</label>
+          <input type="text" class="form-control" id="cname" name="cname" required value="{{ obj_data.cname }}">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label d-block">性別</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="male" name="csex" value="M" {% if obj_data.csex == "M" %}checked{% endif %}>
+            <label class="form-check-label" for="male">男</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="female" name="csex" value="F" {% if obj_data.csex == "F" %}checked{% endif %}>
+            <label class="form-check-label" for="female">女</label>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="cbirthday" class="form-label">生日</label>
+          <input type="date" class="form-control" id="cbirthday" name="cbirthday" required value="{{ obj_data.cbirthday|date:'Y-m-d' }}">
+        </div>
+
+        <div class="mb-3">
+          <label for="cemail" class="form-label">信箱</label>
+          <input type="email" class="form-control" id="cemail" name="cemail" required value="{{ obj_data.cemail }}">
+        </div>
+
+        <div class="mb-3">
+          <label for="cphone" class="form-label">電話</label>
+          <input type="text" class="form-control" id="cphone" name="cphone" required value="{{ obj_data.cphone }}">
+        </div>
+
+        <div class="mb-4">
+          <label for="caddr" class="form-label">地址</label>
+          <input type="text" class="form-control" id="caddr" name="caddr" required value="{{ obj_data.caddr }}">
+        </div>
+
+        <div class="d-flex justify-content-end gap-2">
+          <button type="reset" class="btn btn-outline-secondary">
+            <i class="bi bi-eraser"></i> 清除
+          </button>
+          <button type="submit" class="btn btn-primary">
+            <i class="bi bi-check2-circle"></i> 修改
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

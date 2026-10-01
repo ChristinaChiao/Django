@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/homework3/" method="POST">
+    {% csrf_token %}
+    <div>
+      <div>請問您的學歷為何？</div>
+      <div>
+        <input type="radio" id="highschool" name="eduction" value="高中職">
+        <label for="highschool">高中職</label>
+
+        <input type="radio" id="college" name="eduction" value="大學">
+        <label for="college">大學</label>
+
+        <input type="radio" id="master" name="eduction" value="碩士">
+        <label for="master">碩士</label>
+
+        <input type="radio" id="doctor" name="eduction" value="博士">
+        <label for="doctor">博士</label>
+      </div>
+
+    </div>
+    
+    <div>
+      <div> 你喜歡下列哪些活動(可複選)？</div>
+      <div>
+        <input type="checkbox" id="read" name="items" value="read">
+        <label for="read">閱讀</label>
+
+        <input type="checkbox" id="ball" name="items" value="ball">
+        <label for="ball">打球</label>
+
+        <input type="checkbox" id="shopping" name="items" value="shopping">
+        <label for="shopping">逛街</label>
+
+        <input type="checkbox" id="music" name="items" value="music">
+        <label for="music">聽音樂</label>
+
+        <input type="checkbox" id="water" name="items" value="water">
+        <label for="water">水上運動</label>
+
+        <input type="checkbox" id="travel" name="items" value="travel">
+        <label for="travel">旅行</label>
+      </div>
+    </div>
+    <div>
+      <input type="submit" value="傳送資料">
+      <input type="reset" value="清除資料">
+    </div>
+  </form>
+  
+</body>
+</html>

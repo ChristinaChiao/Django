@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個人小檔案列表</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <h1 style="text-align: center;">個人小檔案列表（共 {{ datas.count }} 筆）</h1>
+  {% for data in datas %}
+    <div class="list-style">
+      <h2>第{{ forloop.counter }} 筆資料（id={{data.id}}）</h2>
+      <h2>姓名：{{ data.username }} </h2>
+      {% if data.userSex == 'female' %}
+        <h2>性別：女 </h2>
+      {% else %}
+        <h2>性別：男 </h2>
+      {% endif %}
+      <h2>學歷：{{ data.userschool }}</h2>
+      <hr>
+      <h2>興趣：</h2>
+      <ul>
+        {% for item in data.interest_list %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+      <hr>
+      <h2>看法為：</h2>
+      <p>{{ data.userthought }}</p>
+    </div>
+  {% empty %}
+    <p>目前尚無資料。</p>
+  {% endfor %}
+  <div class="center_buttons">
+       <input type="button" value="回首頁" onclick="location.href='{% url 'homework6' %}'">
+       <input type="button" value="查看所有資料" onclick="location.href='{% url 'homework6_list' %}'">    
+     </div>
+</body>
+</html>

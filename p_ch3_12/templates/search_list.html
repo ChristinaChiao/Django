@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>學生資料列表</title>
+</head>
+<body>
+  <h1>{{ errormessage }}</h1>
+  <ul>
+    {% for data in datas %}
+      <h2>顯示Student"{{ forloop.counter }}"資料</h2>
+      <li>學號：{{ data.cid }}</li>
+      <li>姓名：{{ data.cname }}</li>
+      <li>性別：{{ data.csex }}</li>
+      <li>生日：{{ data.cbirthday }}</li>
+      <li>郵件：{{ data.cemail }}</li>
+      <li>電話：{{ data.ctel }}</li>
+      <li>地址：{{ data.caddr }}</li>
+    {% endfor %}
+  </ul>
+
+  
+</body>
+</html>

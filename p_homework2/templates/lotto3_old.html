@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lotto3</title>
+</head>
+<body>
+  <h1>產生的樂透號碼為：</h1>
+  {% for num_list in random_num_lists %}
+    <h1>第{{ forloop.counter }}組：
+      {% for random_num in num_list %}
+        {{ random_num }}
+        {% if not forloop.last == False %}, 
+        {% endif %}
+      {% endfor %}
+    </h1>
+  {% endfor %}
+</body>
+</html>

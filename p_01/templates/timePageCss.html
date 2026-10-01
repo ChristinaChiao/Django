@@ -1,0 +1,25 @@
+{% load static %} <!--載入static靜態檔案-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Page Css</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}"> 
+    <!--載入css靜態檔案-->
+</head>
+<body>
+  <div class="image01">
+    <img src="{% static 'images/images.jfif' %}" width="100%" alt="no picture"> <!--後端載入圖片寫法-->
+  </div>
+  <div id="image02">
+    <img src="{% static 'images/images.jfif' %}" width="100%" alt="no picture"> <!--後端載入圖片寫法-->
+  </div>
+  <h1>Welcome <span>{{ username }}</span></h1>
+  <h2>現在時間：{{ now }}</h2>
+  <h2>現在時間：{{ now|date:"Y/m/d H:i:s" }}</h2>
+  <!--修改時間顯示格式-->
+
+
+</body>
+</html>
